@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Services - OmaCargo{% endblock %}
+
+{% block content %}
+<section class="services-page-section">
+  <h1>Our Services</h1>
+  <p class="intro">At OmaCargo, we provide a complete range of logistics solutions to ensure your cargo reaches its destination safely and on time.</p>
+
+  <div class="services-page-container">
+    
+    <div class="service-detail-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2910/2910762.png" alt="Freight Shipping">
+      <h2>Freight Shipping</h2>
+      <p>Fast, reliable, and scalable freight transport for businesses of all sizes. We handle cargo with care and ensure timely deliveries.</p>
+    </div>
+
+    <div class="service-detail-card">
+      <img src="https://img.icons8.com/ios-filled/100/2c3e50/warehouse.png" alt="Warehousing">
+      <h2>Warehousing</h2>
+      <p>Secure and modern storage with real-time inventory tracking. Efficient storage and retrieval solutions for your goods.</p>
+    </div>
+
+    <div class="service-detail-card">
+      <img src="https://img.icons8.com/ios-filled/100/2c3e50/delivery.png" alt="Delivery">
+      <h2>Delivery</h2>
+      <p>Door-to-door delivery solutions ensuring your shipment arrives safely. Track your cargo at every stage.</p>
+    </div>
+
+    <div class="service-detail-card">
+      <img src="https://img.icons8.com/ios-filled/100/2c3e50/airplane-take-off.png" alt="Air & Sea Cargo">
+      <h2>Air & Sea Cargo</h2>
+      <p>International cargo via air and sea. Affordable, fast, and efficient shipping globally for small or large shipments.</p>
+    </div>
+
+    <div class="service-detail-card">
+      <img src="https://img.icons8.com/ios-filled/100/2c3e50/customs.png" alt="Customs Clearance">
+      <h2>Customs Clearance</h2>
+      <p>Seamless customs handling to avoid shipment delays. Experts handle documentation and compliance for smooth transit.</p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.services-page-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f8f9fa;
+}
+.services-page-section h1 {
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+.services-page-section .intro {
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.services-page-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-detail-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  width: 280px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+.service-detail-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.service-detail-card img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.service-detail-card h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.service-detail-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .services-page-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .service-detail-card {
+    width: 90%;
+    padding: 20px;
+  }
+}
+</style>
+{% endblock %}

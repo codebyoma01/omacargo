@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}Track Shipment - OmaCargo{% endblock %}
+
+{% block content %}
+<section style="padding:80px 20px; text-align:center; background:#f5f6fa; min-height:80vh; display:flex; justify-content:center; align-items:center;">
+    <div id="track-box" style="background:#fff; padding:50px; border-radius:20px; max-width:600px; width:100%; 
+         box-shadow:0 15px 30px rgba(0,0,0,0.15); text-align:center; transition: all 0.3s ease;">
+        <h2 style="color:#2c3e50; margin-bottom:30px;">Track Your Shipment 🚢</h2>
+
+        <form method="get">
+            <input type="text" name="tracking_number" placeholder="Enter tracking number" value="{{ query|default:'' }}" 
+                   style="width:100%; padding:15px; border-radius:10px; border:1px solid #ccc; margin-bottom:20px; font-size:1rem;">
+            <button type="submit" class="btn" style="width:100%; padding:15px;">Search</button>
+        </form>
+
+        {% if query %}
+            {% if shipment %}
+                <div style="margin-top:30px; text-align:left; color:#555;">
+                    <h3 style="color:green;">Shipment Found ✅</h3>
+                    <p><strong>Tracking Number:</strong> {{ shipment.tracking_number }}</p>
+                    <p><strong>Sender:</strong> {{ shipment.sender }}</p>
+                    <p><strong>Receiver:</strong> {{ shipment.receiver }}</p>
+                    <p><strong>Status:</strong> {{ shipment.status }}</p>
+                    <p><strong>Created At:</strong> {{ shipment.created_at }}</p>
+                </div>
+            {% else %}
+                <p style="margin-top:30px; color:red;">❌ No shipment found for "{{ query }}"</p>
+            {% endif %}
+        {% endif %}
+    </div>
+</section>
+
+<style>
+@media screen and (max-width:768px) {
+    section {
+        padding:50px 15px;
+    }
+
+    #track-box {
+        padding:30px;
+        max-width:90%;
+    }
+
+    #track-box h2 {
+        font-size:1.8rem;
+        margin-bottom:20px;
+    }
+
+    #track-box input[type="text"] {
+        padding:12px;
+        font-size:0.95rem;
+    }
+
+    #track-box button.btn {
+        padding:12px;
+        font-size:0.95rem;
+    }
+
+    #track-box div {
+        font-size:0.9rem;
+    }
+}
+
+/* Hover effect for desktop */
+#track-box:hover {
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+}
+</style>
+
+<script>
+const trackBox = document.getElementById('track-box');
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+    // Vertical float + subtle scale
+    const translateY = scrollY * 0.15;
+    const scale = 1 + Math.min(scrollY * 0.0008, 0.05);
+    
+    trackBox.style.transform = `translateY(${translateY}px) scale(${scale})`;
+});
+</script>
+{% endblock %}

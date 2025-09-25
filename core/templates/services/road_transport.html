@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}Road Transport - OmaCargo{% endblock %}
+
+{% block content %}
+<section class="service-detail-section">
+  <div class="service-detail-container">
+    <img src="https://img.icons8.com/ios-filled/100/2c3e50/delivery.png" alt="Road Transport">
+    <h2>Road Transport 🚛</h2>
+    <p>
+      Reliable trucking and door-to-door deliveries nationwide.  
+      OmaCargo ensures your shipments reach their destination safely and on time.
+    </p>
+    <p>
+      Ideal for local businesses, e-commerce, and bulk goods requiring timely delivery.
+    </p>
+
+    <!-- Back to Services Button -->
+    <div class="back-btn-container">
+      <a href="{% url 'services' %}" class="back-btn">← Back to Services</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.service-detail-section {
+  padding: 80px 20px;
+  background: #ecf0f1;
+  text-align: center;
+}
+.service-detail-container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.service-detail-container img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+.service-detail-container h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+.service-detail-container p {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* Back Button */
+.back-btn-container {
+  margin-top: 20px;
+}
+.back-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #d35400;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.back-btn:hover {
+  background: #e67e22;
+}
+</style>
+{% endblock %}
