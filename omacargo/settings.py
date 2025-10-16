@@ -16,10 +16,10 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY
-SECRET_KEY = 'django-insecure-kru$nvonww596%mx%&au-w9*7bm_mv9&ppi)-m1=)4pretxtp('
+SECRET_KEY = 'ip#4ioz*9aeasg_+-%70vfj%mje58v$h-d&x$p17p&d&tib+y6'
 DEBUG = False
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'yourusername.pythonanywhere.com']
 
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com']
 
 
 
